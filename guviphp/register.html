@@ -1,0 +1,205 @@
+<html>
+<title>www.registration.com</title>
+<head>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+    </head>
+<style>
+    body
+    {
+        background:rgb(0, 170, 255);
+    opacity:0.9;   
+    
+    }
+</style>
+<body>
+    <script>
+       
+
+        function signup()
+        {
+            var uname1=document.reg.uname1.value;
+            
+            var emailid=document.reg.emailid.value;
+            var upswd1=document.reg.upswd1.value;
+            var upswd2=document.reg.upswd2.value;
+            var ph=document.reg.phno.value;
+            var birthday=document.reg.dob.value;
+    
+            localStorage.setItem("uname1",uname1);
+            localStorage.setItem("upswd1",upswd1);
+            localStorage.setItem("emailid",emailid);
+
+    
+            
+    
+        
+        
+            if (uname1=="")
+                {
+                    document.getElementById("one").innerHTML ="*FirstName is required*";
+                    return false;
+                }
+                
+                
+                
+             
+             
+                 else if (emailid.length<8)
+                {
+                    document.getElementById("two").innerHTML ="*EMAIL is required*";
+                    return false;
+    
+                }
+                
+    
+                 else if(upswd1.length<8)
+                {
+                    document.getElementById("three").innerHTML ="*Password must contain 8 characters*";
+                    return false;
+                }
+                
+                
+                   else if(upswd1 !== upswd2)
+                {
+                    
+                    document.getElementById("four").innerHTML = "*Password Did Not Match*";
+                    return false;
+                }
+                else if(ph.length<10)
+                {
+                    document.getElementById("five").innerHTML = "*Phone number must 10 characters long*";
+                    return false;
+                }
+                else if(isNaN(ph))
+                {
+                    document.getElementById("five").innerHTML = "*Enter A Numeric only*";
+                    return false;
+                }
+                else if(birthday == "")
+                {
+                    document.getElementById("six").innerHTML = "*Select DOB*";
+                    return false;
+                 
+                }
+    
+              
+               
+                
+        
+    
+    else{
+    
+    }
+    
+                
+                
+                    
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </script>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+         
+
+        
+            
+              
+         <button class="navbar-toggler navbar-light bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+           
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="#" class="nav-link">HOME</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">CONTACT</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">BLOG</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">ABOUT US</a></li>
+            <li class="nav-item"><a href="log.html" target="_blank" class="nav-link" style="font-size:16px;color:white;margin-top:0;">LOG IN</a></li>
+            
+        
+        </ul>
+        
+        </div>
+        
+        </div>
+        </nav>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4">
+
+        </div>   
+        <div class="col-lg-4">
+<form name="reg" method="POST" action="register.php"  target="_blank" onsubmit="return signup()">
+    <h1 STYLE="text-align: center;color:blue">SIGN UP</h1><br>
+
+
+    <div class="name">
+FIRST NAME : <br><br><input type="text" name="uname1" id="uname1">
+<span id="one"></span></div><br>
+
+
+
+
+<div class="name">
+EMAIL ID :<br><br><input type="email" name="email" id="emailid">
+<span id="two"></span></div><br>
+
+
+ <div class="name">
+PASSWORD :<br><br><input type="password" name="upswd1" id="upswd1">
+<span id="three"></span></div><br>
+
+
+<div class="name">
+CONFIRM PASSWORD :<br><br><input type="password" name="upswd2" id="upswd2">
+<span id="four"></span></div><br>
+
+
+<div class="name">
+PH.NO <br><br><input type="text" name="phno" id="phno">
+<span id="five"></span><br>
+</div>
+
+
+<div class="name">
+ GENDER : <BR><BR><select>
+    <option>MALE</option>
+    <option>FEMALE</option>
+    <option>TRANSGENDER</option>
+</select><br><br></div><br>
+
+
+<div class="name">
+BIRTHDAY : <br><br><input type="date" name="dob" id="dob">
+<span id="six"></span>
+</div><br>
+
+
+
+<button>REGISTER</button>
+<a href="log.html" style="margin:25%;text-decoration:none;">EXISTING USER! LOG IN</a>
+</form>
+<div class="col-lg-4">
+
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
